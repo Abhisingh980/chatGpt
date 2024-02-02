@@ -27,8 +27,9 @@ class ChatWindow(QMainWindow):
 
     def set_text(self):
         call_class = backend.ChatBot()
-        response = call_class.get_response(self.input_text)
-        self.chat_window.setText(response)
+        response = call_class.get_response(self.input_text.text())
+        self.chat_window.append(response)
+        self.input_text.clear()
 
 
 
