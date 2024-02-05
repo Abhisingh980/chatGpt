@@ -29,7 +29,7 @@ class ChatWindow(QMainWindow):
     def set_text(self):
         call_class = backend.ChatBot()
         # set to editor area
-        thread = threading.Thread(target=set_input_text, args=(self.input_text.text()))
+        thread = threading.Thread(target=set_input_text, args=(self.input_text.text(),))
         thread.start()
         set_input_text = self.chat_window.append(f"you : {self.input_text.text()}")
         response = call_class.get_response(self.input_text.text())
